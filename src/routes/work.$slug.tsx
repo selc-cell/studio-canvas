@@ -96,7 +96,7 @@ function ProjectPage() {
       {project.gallery && project.gallery.length > 0 ? (
         <section className="border-t border-border bg-surface section-pad">
           <div className="container-wide grid gap-10">
-            {project.gallery.map((src, i) => (
+            {project.gallery.map((src: string, i: number) => (
               <div key={i} className="overflow-hidden border border-border bg-background">
                 <img
                   src={src}
