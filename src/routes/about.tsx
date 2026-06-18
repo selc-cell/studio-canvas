@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
-import profile from "@/assets/profile.jpg";
+import bioAsset from "@/assets/bio.jpg.asset.json";
+
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -25,7 +26,10 @@ const SKILLS = [
 
 const TIMELINE = [
   { year: "2025", title: "3D Production Specialist", place: "Canada" },
+  { year: "2023", title: "3D Intern — Spicy Banana Creations Co", place: "Hong Kong" },
+  { year: "2023", title: "Freelance Graphic Designer — Shimai Tribe", place: "Hong Kong" },
 ];
+
 
 function AboutPage() {
   return (
@@ -45,12 +49,13 @@ function AboutPage() {
           <div className="lg:col-span-5">
             <div className="aspect-[4/5] overflow-hidden border border-border bg-surface">
               <img
-                src={profile}
+                src={bioAsset.url}
                 alt="Portrait of Selina Wong"
                 width={1024}
                 height={1280}
                 className="h-full w-full object-cover"
               />
+
             </div>
           </div>
           <div className="lg:col-span-7">
