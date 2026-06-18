@@ -1,13 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import type { Project } from "@/lib/projects";
+import { SLUG_TO_PATH } from "@/components/site/ProjectShell";
 
 export function ProjectCard({ project }: { project: Project }) {
+  const to = SLUG_TO_PATH[project.slug] ?? "/work";
   return (
-    <Link
-      to="/work/$slug"
-      params={{ slug: project.slug }}
-      className="group block"
-    >
+    <Link to={to} className="group block">
       <div className="relative overflow-hidden bg-surface aspect-[4/3] border border-border">
         <img
           src={project.image}
