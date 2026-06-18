@@ -5,9 +5,9 @@ import { Layout } from "@/components/site/Layout";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Mira Hale" },
+      { title: "Contact — Selina Wong" },
       { name: "description", content: "Get in touch about projects, collaborations, or to say hello." },
-      { property: "og:title", content: "Contact — Mira Hale" },
+      { property: "og:title", content: "Contact — Selina Wong" },
       { property: "og:description", content: "Get in touch about projects, collaborations, or to say hello." },
       { property: "og:url", content: "/contact" },
     ],
@@ -76,21 +76,19 @@ function ContactPage() {
             <div className="border border-border bg-surface p-8">
               <div className="text-xs uppercase tracking-[0.22em] text-foreground-muted">Email</div>
               <a
-                href="mailto:hello@mirahale.studio"
+                href="mailto:selcheung712@gmail.com"
                 className="mt-3 block break-all text-2xl font-semibold tracking-tight hover:underline underline-offset-4"
               >
-                hello@mirahale.studio
+                selcheung712@gmail.com
               </a>
 
               <div className="mt-10 text-xs uppercase tracking-[0.22em] text-foreground-muted">Elsewhere</div>
               <ul className="mt-3 space-y-2 text-base">
-                <li><a className="hover:underline underline-offset-4" href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram — @mirahale</a></li>
-                <li><a className="hover:underline underline-offset-4" href="https://www.behance.net" target="_blank" rel="noreferrer">Behance — /mirahale</a></li>
-                <li><a className="hover:underline underline-offset-4" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn — /in/mirahale</a></li>
+                <li><a className="hover:underline underline-offset-4" href="https://www.linkedin.com/in/selina-wong-37bb86312/" target="_blank" rel="noreferrer">LinkedIn — /in/selina-wong</a></li>
               </ul>
 
               <div className="mt-10 text-xs uppercase tracking-[0.22em] text-foreground-muted">Located</div>
-              <div className="mt-3 text-base">Lisbon, Portugal — working worldwide</div>
+              <div className="mt-3 text-base">Montreal, Canada — working worldwide</div>
             </div>
           </aside>
         </div>

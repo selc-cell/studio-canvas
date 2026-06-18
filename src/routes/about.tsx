@@ -5,10 +5,10 @@ import profile from "@/assets/profile.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Mira Hale" },
-      { name: "description", content: "Bio, disciplines, and selected experience of digital media artist Mira Hale." },
-      { property: "og:title", content: "About — Mira Hale" },
-      { property: "og:description", content: "Bio, disciplines, and selected experience of digital media artist Mira Hale." },
+      { title: "About — Selina Wong" },
+      { name: "description", content: "Bio, disciplines, and experience of digital artist & designer Selina Wong." },
+      { property: "og:title", content: "About — Selina Wong" },
+      { property: "og:description", content: "Bio, disciplines, and experience of digital artist & designer Selina Wong." },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
@@ -17,21 +17,14 @@ export const Route = createFileRoute("/about")({
 });
 
 const SKILLS = [
-  "Motion Graphics",
-  "Brand Identity",
-  "Editorial Design",
-  "UI / UX",
+  "Visual Identity",
+  "Graphic Design",
+  "3D Production",
   "Photography",
-  "Illustration",
-  "Art Direction",
-  "Type Design",
 ];
 
 const TIMELINE = [
-  { year: "2022 — Present", title: "Independent Practice", place: "Lisbon" },
-  { year: "2019 — 2022", title: "Senior Designer, Field Studio", place: "Berlin" },
-  { year: "2016 — 2019", title: "Designer, Pentagram (Berlin)", place: "Berlin" },
-  { year: "2014 — 2016", title: "BA Visual Communication", place: "HfG Karlsruhe" },
+  { year: "2025", title: "3D Production Specialist", place: "Canada" },
 ];
 
 function AboutPage() {
@@ -41,7 +34,7 @@ function AboutPage() {
         <div className="container-wide py-20 lg:py-28">
           <div className="text-xs uppercase tracking-[0.22em] text-foreground-muted">About</div>
           <h1 className="mt-6 max-w-4xl text-5xl font-bold leading-[1.02] tracking-[-0.02em] sm:text-6xl lg:text-7xl">
-            A designer with a soft spot for monochrome, hard grids, and patient work.
+            A digital artist working across photography, video, graphic design, animation, and 3D.
           </h1>
         </div>
       </section>
@@ -53,7 +46,7 @@ function AboutPage() {
             <div className="aspect-[4/5] overflow-hidden border border-border bg-surface">
               <img
                 src={profile}
-                alt="Portrait of Mira Hale in studio"
+                alt="Portrait of Selina Wong"
                 width={1024}
                 height={1280}
                 className="h-full w-full object-cover"
@@ -64,13 +57,10 @@ function AboutPage() {
             <div className="text-xs uppercase tracking-[0.22em] text-foreground-muted">Bio</div>
             <div className="mt-6 space-y-6 text-lg leading-relaxed text-foreground">
               <p>
-                I'm Mira — a digital media artist and designer working independently from a small studio in Lisbon. My practice sits between motion, identity, and interface, with frequent detours into print and photography.
+                I'm Selina — a digital artist and designer based in Montreal, Canada. I specialize in photography, video, graphic design, animation, and 3D production.
               </p>
               <p>
-                Before going independent I spent six years at studios in Berlin, working with publishers, cultural institutions, and a handful of technology companies. I still believe the best work comes from longer relationships and quieter rooms.
-              </p>
-              <p>
-                I write when I have something to say, lecture occasionally, and answer email within a day or two.
+                My passion lies in high-quality digital content that blends storytelling and technical precision. I work confidently both independently and in teams.
               </p>
             </div>
           </div>

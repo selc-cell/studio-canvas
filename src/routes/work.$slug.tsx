@@ -10,7 +10,7 @@ export const Route = createFileRoute("/work/$slug")({
   },
   head: ({ loaderData, params }) => {
     const p = loaderData?.project;
-    const title = p ? `${p.title} — Mira Hale` : "Project — Mira Hale";
+    const title = p ? `${p.title} — Selina Wong` : "Project — Selina Wong";
     const desc = p?.description ?? "Project case study.";
     return {
       meta: [

@@ -38,7 +38,7 @@ export function Nav() {
           onClick={() => setOpen(false)}
           className="truncate text-sm font-semibold tracking-tight"
         >
-          Mira Hale<span className="text-foreground-muted"> — Digital Media</span>
+          Selina Wong<span className="text-foreground-muted"> — Digital Artist</span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
