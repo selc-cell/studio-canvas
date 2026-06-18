@@ -14,7 +14,11 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as WorkSlugRouteImport } from './routes/work.$slug'
+import { Route as WorkTheWombWasATombRouteImport } from './routes/work.the-womb-was-a-tomb'
+import { Route as WorkReimaginingFortYorkRouteImport } from './routes/work.reimagining-fort-york'
+import { Route as WorkNightOfLivingMonstersRouteImport } from './routes/work.night-of-living-monsters'
+import { Route as WorkMakingQueerkinsRouteImport } from './routes/work.making-queerkins'
+import { Route as WorkFruitMarketRouteImport } from './routes/work.fruit-market'
 
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
@@ -41,9 +45,30 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WorkSlugRoute = WorkSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
+const WorkTheWombWasATombRoute = WorkTheWombWasATombRouteImport.update({
+  id: '/the-womb-was-a-tomb',
+  path: '/the-womb-was-a-tomb',
+  getParentRoute: () => WorkRoute,
+} as any)
+const WorkReimaginingFortYorkRoute = WorkReimaginingFortYorkRouteImport.update({
+  id: '/reimagining-fort-york',
+  path: '/reimagining-fort-york',
+  getParentRoute: () => WorkRoute,
+} as any)
+const WorkNightOfLivingMonstersRoute =
+  WorkNightOfLivingMonstersRouteImport.update({
+    id: '/night-of-living-monsters',
+    path: '/night-of-living-monsters',
+    getParentRoute: () => WorkRoute,
+  } as any)
+const WorkMakingQueerkinsRoute = WorkMakingQueerkinsRouteImport.update({
+  id: '/making-queerkins',
+  path: '/making-queerkins',
+  getParentRoute: () => WorkRoute,
+} as any)
+const WorkFruitMarketRoute = WorkFruitMarketRouteImport.update({
+  id: '/fruit-market',
+  path: '/fruit-market',
   getParentRoute: () => WorkRoute,
 } as any)
 
@@ -53,7 +78,11 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRouteWithChildren
-  '/work/$slug': typeof WorkSlugRoute
+  '/work/fruit-market': typeof WorkFruitMarketRoute
+  '/work/making-queerkins': typeof WorkMakingQueerkinsRoute
+  '/work/night-of-living-monsters': typeof WorkNightOfLivingMonstersRoute
+  '/work/reimagining-fort-york': typeof WorkReimaginingFortYorkRoute
+  '/work/the-womb-was-a-tomb': typeof WorkTheWombWasATombRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -61,7 +90,11 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRouteWithChildren
-  '/work/$slug': typeof WorkSlugRoute
+  '/work/fruit-market': typeof WorkFruitMarketRoute
+  '/work/making-queerkins': typeof WorkMakingQueerkinsRoute
+  '/work/night-of-living-monsters': typeof WorkNightOfLivingMonstersRoute
+  '/work/reimagining-fort-york': typeof WorkReimaginingFortYorkRoute
+  '/work/the-womb-was-a-tomb': typeof WorkTheWombWasATombRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -70,7 +103,11 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRouteWithChildren
-  '/work/$slug': typeof WorkSlugRoute
+  '/work/fruit-market': typeof WorkFruitMarketRoute
+  '/work/making-queerkins': typeof WorkMakingQueerkinsRoute
+  '/work/night-of-living-monsters': typeof WorkNightOfLivingMonstersRoute
+  '/work/reimagining-fort-york': typeof WorkReimaginingFortYorkRoute
+  '/work/the-womb-was-a-tomb': typeof WorkTheWombWasATombRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -80,9 +117,23 @@ export interface FileRouteTypes {
     | '/contact'
     | '/sitemap.xml'
     | '/work'
-    | '/work/$slug'
+    | '/work/fruit-market'
+    | '/work/making-queerkins'
+    | '/work/night-of-living-monsters'
+    | '/work/reimagining-fort-york'
+    | '/work/the-womb-was-a-tomb'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/sitemap.xml' | '/work' | '/work/$slug'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/sitemap.xml'
+    | '/work'
+    | '/work/fruit-market'
+    | '/work/making-queerkins'
+    | '/work/night-of-living-monsters'
+    | '/work/reimagining-fort-york'
+    | '/work/the-womb-was-a-tomb'
   id:
     | '__root__'
     | '/'
@@ -90,7 +141,11 @@ export interface FileRouteTypes {
     | '/contact'
     | '/sitemap.xml'
     | '/work'
-    | '/work/$slug'
+    | '/work/fruit-market'
+    | '/work/making-queerkins'
+    | '/work/night-of-living-monsters'
+    | '/work/reimagining-fort-york'
+    | '/work/the-womb-was-a-tomb'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -138,22 +193,58 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/work/$slug': {
-      id: '/work/$slug'
-      path: '/$slug'
-      fullPath: '/work/$slug'
-      preLoaderRoute: typeof WorkSlugRouteImport
+    '/work/the-womb-was-a-tomb': {
+      id: '/work/the-womb-was-a-tomb'
+      path: '/the-womb-was-a-tomb'
+      fullPath: '/work/the-womb-was-a-tomb'
+      preLoaderRoute: typeof WorkTheWombWasATombRouteImport
+      parentRoute: typeof WorkRoute
+    }
+    '/work/reimagining-fort-york': {
+      id: '/work/reimagining-fort-york'
+      path: '/reimagining-fort-york'
+      fullPath: '/work/reimagining-fort-york'
+      preLoaderRoute: typeof WorkReimaginingFortYorkRouteImport
+      parentRoute: typeof WorkRoute
+    }
+    '/work/night-of-living-monsters': {
+      id: '/work/night-of-living-monsters'
+      path: '/night-of-living-monsters'
+      fullPath: '/work/night-of-living-monsters'
+      preLoaderRoute: typeof WorkNightOfLivingMonstersRouteImport
+      parentRoute: typeof WorkRoute
+    }
+    '/work/making-queerkins': {
+      id: '/work/making-queerkins'
+      path: '/making-queerkins'
+      fullPath: '/work/making-queerkins'
+      preLoaderRoute: typeof WorkMakingQueerkinsRouteImport
+      parentRoute: typeof WorkRoute
+    }
+    '/work/fruit-market': {
+      id: '/work/fruit-market'
+      path: '/fruit-market'
+      fullPath: '/work/fruit-market'
+      preLoaderRoute: typeof WorkFruitMarketRouteImport
       parentRoute: typeof WorkRoute
     }
   }
 }
 
 interface WorkRouteChildren {
-  WorkSlugRoute: typeof WorkSlugRoute
+  WorkFruitMarketRoute: typeof WorkFruitMarketRoute
+  WorkMakingQueerkinsRoute: typeof WorkMakingQueerkinsRoute
+  WorkNightOfLivingMonstersRoute: typeof WorkNightOfLivingMonstersRoute
+  WorkReimaginingFortYorkRoute: typeof WorkReimaginingFortYorkRoute
+  WorkTheWombWasATombRoute: typeof WorkTheWombWasATombRoute
 }
 
 const WorkRouteChildren: WorkRouteChildren = {
-  WorkSlugRoute: WorkSlugRoute,
+  WorkFruitMarketRoute: WorkFruitMarketRoute,
+  WorkMakingQueerkinsRoute: WorkMakingQueerkinsRoute,
+  WorkNightOfLivingMonstersRoute: WorkNightOfLivingMonstersRoute,
+  WorkReimaginingFortYorkRoute: WorkReimaginingFortYorkRoute,
+  WorkTheWombWasATombRoute: WorkTheWombWasATombRoute,
 }
 
 const WorkRouteWithChildren = WorkRoute._addFileChildren(WorkRouteChildren)

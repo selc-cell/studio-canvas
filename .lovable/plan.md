@@ -1,26 +1,43 @@
-Update the first project in the work grid so it reflects Selina's Fort York project, and keep the existing click-through project detail page behavior.
+Create 5 dedicated route files — one per project — each with a bespoke layout tailored to that project's content (Brief, Insight, Problem, Outcome, Tools, etc.). Update project cards to link to the new routes.
 
-## Changes
+## New route files
 
-1. **Update `src/lib/projects.ts`**
-   - Change the first project (`resonance-titles`) to:
-     - `title`: "Reimagining Fort York Digitally"
-     - `year`: 2025
-     - `category`: "3D Production"
-     - `client`: "Fort York National Historic Site"
-     - `role`: "3D Production"
-     - `description`: "Builds on Fort York's 'Echoes of Home' exhibit to extend it digitally."
-     - Keep the existing placeholder image and gallery for now (to be swapped later when the user provides project images).
-   - Add `"3D Production"` to the `Category` union and the `CATEGORIES` filter array so it appears as a real filter option.
+Each is a standalone `createFileRoute(...)` page with its own `head()` metadata, hero, meta block, and body sections shaped to the project's specific fields. All use the existing `<Layout>`, design tokens (no hardcoded colors), and link back to `/work` + a "Next Project" footer.
 
-2. **Detail page behavior**
-   - No new route is needed. The existing `/work/$slug` route already renders a detail page when a project card is clicked. After updating the project data, clicking the first card will automatically show the Fort York project with the updated title, description, client, role, year, and gallery.
-   - Keep the existing case-study template layout.
+1. `src/routes/work.reimagining-fort-york.tsx` → `/work/reimagining-fort-york`
+   - Sections: Hero · Meta (Client / Year / Role / Category) · Brief
+   - Keep current placeholder image + gallery
 
-## Assumptions
-- The project title is "Reimagining Fort York Digitally" and the year is displayed separately as 2025 (the current layout already shows the year beside the title on cards).
-- The client is "Fort York National Historic Site" and the role is "3D Production", matching the user's recent experience entry on the About page.
-- The existing `work-1.jpg` placeholder image is kept until the user uploads a project-specific image.
+2. `src/routes/work.making-queerkins.tsx` → `/work/making-queerkins`
+   - Sections: Hero · Meta (+ Tools) · Brief · Project (Donna Haraway "Making Oddkin" narrative)
+
+3. `src/routes/work.the-womb-was-a-tomb.tsx` → `/work/the-womb-was-a-tomb`
+   - Sections: Hero · Meta (+ Tools) · Project (Tower/Star narrative) · Result
+
+4. `src/routes/work.night-of-living-monsters.tsx` → `/work/night-of-living-monsters`
+   - Sections: Hero · Meta (+ Tools) · Brief · Insight · Problem · Outcome
+   - Problem/Outcome use the user's placeholder copy as italic muted "TBD" notes so the layout is ready when copy arrives
+
+5. `src/routes/work.fruit-market.tsx` → `/work/fruit-market`
+   - Sections: Hero · Meta (+ Tools) · Brief · Insight · Problem · Outcome (Outcome marked TBD)
+
+Each file imports its image + data from `src/lib/projects.ts` (single source of truth) and hardcodes only the bespoke narrative copy.
+
+## Wiring
+
+- `src/components/site/ProjectCard.tsx`: keep the card markup, but change its `Link` to point to each project's dedicated route based on `project.slug` (a small map: slug → route path).
+- Delete `src/routes/work.$slug.tsx` so the only detail pages are the 5 new ones. (Removes the generic fallback per "5 separate route files".)
+- `src/lib/projects.ts`: no schema changes needed — already has `tools`, `brief`, `outcome` fields. Existing data stays the source of truth for card grid + meta blocks.
+
+## Layout system
+
+To avoid duplicating the hero/meta/footer chrome 5 times, add a tiny shared building-block file:
+
+- `src/components/site/ProjectShell.tsx` — exports `<ProjectHero>`, `<ProjectMeta>`, `<NextProjectFooter>`. Each route composes these + writes its own body sections. This keeps the 5 routes truly bespoke in the middle while sharing the frame.
 
 ## Verification
-- Build the project and check that the `/work` page shows the new first card, the filter bar includes "3D Production", and clicking the card opens a detail page with the updated content.
+
+- `/work` cards click through to the new routes.
+- Each new URL renders with route-specific `<title>` and meta description.
+- "Next Project" footer cycles through the 5 projects in `PROJECTS` order.
+- No reference to the deleted `work.$slug.tsx` remains.
