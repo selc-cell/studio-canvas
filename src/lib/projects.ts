@@ -5,7 +5,7 @@ import work4 from "@/assets/work-4.jpg";
 import work5 from "@/assets/work-5.jpg";
 import work6 from "@/assets/work-6.jpg";
 
-export type Category = "Motion" | "Branding" | "Print" | "Digital" | "Photography" | "Illustration";
+export type Category = "3D Production" | "Branding" | "Print" | "Digital" | "Photography" | "Illustration";
 
 export interface Project {
   slug: string;
