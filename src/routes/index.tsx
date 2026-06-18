@@ -6,10 +6,10 @@ import { PROJECTS } from "@/lib/projects";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Mira Hale — Digital Media Artist & Designer" },
-      { name: "description", content: "Selected work across motion, brand identity, editorial, and interface design by Mira Hale." },
-      { property: "og:title", content: "Mira Hale — Digital Media Artist & Designer" },
-      { property: "og:description", content: "Selected work across motion, brand identity, editorial, and interface design by Mira Hale." },
+      { title: "Selina Wong — Digital Artist & Designer" },
+      { name: "description", content: "Selected work in photography, video, graphic design, animation, and 3D production by Selina Wong." },
+      { property: "og:title", content: "Selina Wong — Digital Artist & Designer" },
+      { property: "og:description", content: "Selected work in photography, video, graphic design, animation, and 3D production by Selina Wong." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -30,12 +30,12 @@ function Index() {
               Portfolio — 2014 / 2025
             </div>
             <h1 className="mt-6 text-[44px] font-bold leading-[0.95] tracking-[-0.02em] sm:text-6xl lg:text-[96px]">
-              Mira Hale.
+              Selina Wong.
               <br />
-              <span className="text-foreground-muted">Digital Media Artist & Designer.</span>
+              <span className="text-foreground-muted">Digital Artist & Designer.</span>
             </h1>
             <p className="mt-10 max-w-xl text-base text-foreground-muted sm:text-lg">
-              Independent practice working across motion, brand identity, editorial, and interface design — with studios, publishers, and small teams who care about how a thing is made.
+              I specialize in photography, video, graphic design, animation, and 3D production — creating high-quality digital content that blends storytelling and technical precision.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
@@ -90,7 +90,7 @@ function Index() {
           </div>
           <div className="lg:col-span-9">
             <p className="text-2xl font-medium leading-[1.3] tracking-[-0.01em] sm:text-3xl">
-              I make quiet, durable work for people who notice details. Trained in graphic design, sharpened in motion, currently spending most days between After Effects, Figma, and a notebook.
+              I specialize in photography, video, graphic design, animation, and 3D production. My passion lies in high-quality digital content that blends storytelling and technical precision. I work confidently both independently and in teams.
             </p>
             <Link to="/about" className="mt-8 inline-block text-sm font-semibold underline underline-offset-4">
               Learn more →
