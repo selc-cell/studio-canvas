@@ -24,7 +24,7 @@ const SKILLS = [
 ];
 
 const TIMELINE = [
-  { year: "2025", title: "3D Production Specialist", place: "Canada" },
+  { year: "2025", title: "3D Production Specialist — Fort York National Historic Site", place: "Canada" },
   { year: "2023", title: "3D Intern — Spicy Banana Creations Co", place: "Hong Kong" },
   { year: "2023", title: "Freelance Graphic Designer — Shimai Tribe", place: "Hong Kong" },
 ];
