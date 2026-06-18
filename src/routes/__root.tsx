@@ -77,10 +77,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Mira Hale — Digital Media Artist & Designer" },
+      { title: "Selina Wong — Digital Artist & Designer" },
       { name: "description", content: "Independent practice across motion, brand identity, editorial, and interface design." },
-      { name: "author", content: "Mira Hale" },
-      { property: "og:site_name", content: "Mira Hale" },
+      { name: "author", content: "Selina Wong" },
+      { property: "og:site_name", content: "Selina Wong" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       {

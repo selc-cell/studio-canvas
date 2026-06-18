@@ -7,9 +7,9 @@ import { CATEGORIES, PROJECTS } from "@/lib/projects";
 export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
-      { title: "Work — Mira Hale" },
+      { title: "Work — Selina Wong" },
       { name: "description", content: "A selected archive of motion, branding, editorial, interface, photography, and illustration projects." },
-      { property: "og:title", content: "Work — Mira Hale" },
+      { property: "og:title", content: "Work — Selina Wong" },
       { property: "og:description", content: "A selected archive of motion, branding, editorial, interface, photography, and illustration projects." },
       { property: "og:url", content: "/work" },
     ],
