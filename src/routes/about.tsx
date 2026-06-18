@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import bioAsset from "@/assets/bio.jpg.asset.json";
 
-
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
@@ -30,7 +29,6 @@ const TIMELINE = [
   { year: "2023", title: "Freelance Graphic Designer — Shimai Tribe", place: "Hong Kong" },
 ];
 
-
 function AboutPage() {
   return (
     <Layout>
@@ -55,7 +53,6 @@ function AboutPage() {
                 height={1280}
                 className="h-full w-full object-cover"
               />
-
             </div>
           </div>
           <div className="lg:col-span-7">
