@@ -3,9 +3,8 @@ import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
 import work4 from "@/assets/work-4.jpg";
 import work5 from "@/assets/work-5.jpg";
-import work6 from "@/assets/work-6.jpg";
 
-export type Category = "3D Production" | "Branding" | "Print" | "Digital" | "Photography" | "Illustration";
+export type Category = "3D Production" | "Graphic Design" | "Animation" | "Branding" | "Print" | "Digital" | "Photography" | "Illustration";
 
 export interface Project {
   slug: string;
@@ -14,7 +13,10 @@ export interface Project {
   year: number;
   client: string;
   role: string;
+  tools?: string;
+  brief?: string;
   description: string;
+  outcome?: string;
   image: string;
   gallery?: string[];
 }
@@ -33,70 +35,70 @@ export const PROJECTS: Project[] = [
     gallery: [work1, work5],
   },
   {
-    slug: "north-stationery",
-    title: "North — Brand Identity",
-    category: "Branding",
+    slug: "making-queerkins",
+    title: "Making Queerkins",
+    category: "Graphic Design",
     year: 2024,
-    client: "North Coffee Co.",
-    role: "Identity, Art Direction",
+    client: "Shimai Tribe, Eaton Workshop Hong Kong",
+    role: "Graphic Designer",
+    tools: "Adobe Photoshop, Playground AI, Blender",
+    brief: "Visual identity for queer rave collective Shimai Tribe celebrating Pride Month.",
     description:
-      "A complete identity system for a single-origin roaster. The mark draws on Swiss type traditions paired with quietly tactile stationery — uncoated stocks, edge paint, and a restrained two-tone palette.",
+      "Biomorphic humans floating in a celestial garden, and blob creatures hug across species. I drew inspiration from Donna Haraway's notion of \"Making Oddkin\", which encourages forming a new way of kinship that includes nature and other creatures, beyond the nuclear family.",
     image: work2,
-    gallery: [work2, work3],
+    gallery: [work2],
   },
   {
-    slug: "fold-quarterly",
-    title: "Fold Quarterly — Issue 04",
-    category: "Print",
+    slug: "the-womb-was-a-tomb",
+    title: "The Womb Was A Tomb: Transmutation of Sexual Violence",
+    category: "3D Production",
     year: 2024,
-    client: "Fold Publishing",
-    role: "Editorial Design",
+    client: "Personal",
+    role: "3D Artist",
+    tools: "Blender, Substance Painter, Adobe After Effects",
     description:
-      "Editorial design for the fourth issue of an independent culture journal. The grid leans on wide outer margins and a single column for long-form, with photographic spreads bleeding across the gutter.",
+      "This 3D short film dissects the bodily and emotional impact of sexual violence and prompts reflection on the mind–body connection in recovery. Organs are said to store emotions, beliefs, and memories in Eastern healing systems. The womb carries a psyche, recording the event and co-creating a shifting inner-body landscape. Driven by the Tower and the Star in the tarot, the womb-tower crumbles and transforms into a lighter form in repeating cycles.",
+    outcome: "Explored digital storytelling through motion graphics — skills transferable to brand narrative videos.",
     image: work3,
-    gallery: [work3, work2],
+    gallery: [work3],
   },
   {
-    slug: "atlas-dashboard",
-    title: "Atlas — Interface System",
-    category: "Digital",
-    year: 2025,
-    client: "Atlas Labs",
-    role: "UI/UX, Design System",
+    slug: "night-of-living-monsters",
+    title: "The Night of Living Monsters",
+    category: "Graphic Design",
+    year: 2023,
+    client: "Personal",
+    role: "Graphic Designer",
+    tools: "Adobe Photoshop",
+    brief:
+      "Design a visual identity and set of graphics for The Night of Living Monsters, playing on horror iconography and monster mythology.",
     description:
-      "A monochrome operations dashboard for a logistics platform. The system prioritises information density without losing breathing room, with components calibrated for long working sessions on large displays.",
+      "Monsters in folklore have always represented what society fears, misunderstands, or excludes. There's rich visual territory between camp horror aesthetics and something more psychologically unsettling — between creature-feature fun and genuine dread.",
     image: work4,
     gallery: [work4],
   },
   {
-    slug: "concrete-survey",
-    title: "Concrete Survey",
-    category: "Photography",
+    slug: "fruit-market",
+    title: "Fruit Market 果欄",
+    category: "Animation",
     year: 2023,
     client: "Personal",
-    role: "Photography",
+    role: "Animator & Director",
+    tools: "After Effects, Procreate, Premiere Pro",
+    brief:
+      "Create an animated piece documenting and reimagining the 果欄 (Yau Ma Tei Wholesale Fruit Market) — one of Hong Kong's last surviving wholesale markets and a living fragment of the city's working-class urban fabric.",
     description:
-      "An ongoing photographic survey of brutalist civic architecture, shot on medium format and printed silver gelatin. The series documents structures often overlooked in their own cities.",
+      "The 果欄 is not just a market — it is a way of life. The chaos of pre-dawn trading, the stacked crates, the neon glow on wet concrete, the social rituals between vendors and regulars — it holds a kind of collective memory that photographs alone can't fully convey. Animation allows the texture and rhythm of the place to be reconstructed and felt. The challenge was finding a visual style that honoured the grit and energy of the 果欄 without romanticising or exoticising it.",
     image: work5,
     gallery: [work5],
-  },
-  {
-    slug: "graph-studies",
-    title: "Graph Studies",
-    category: "Illustration",
-    year: 2023,
-    client: "Personal",
-    role: "Illustration",
-    description:
-      "A set of ink drawings exploring nodes, edges, and the visual language of diagrams divorced from data. Drawn on a single sitting per piece, no corrections.",
-    image: work6,
-    gallery: [work6],
   },
 ];
 
 export const CATEGORIES: ("All" | Category)[] = [
   "All",
   "3D Production",
+  "Graphic Design",
+  "Animation",
   "Branding",
   "Print",
   "Digital",
