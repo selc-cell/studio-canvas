@@ -96,7 +96,7 @@ export const PROJECTS: Project[] = [
 
 export const CATEGORIES: ("All" | Category)[] = [
   "All",
-  "Motion",
+  "3D Production",
   "Branding",
   "Print",
   "Digital",
